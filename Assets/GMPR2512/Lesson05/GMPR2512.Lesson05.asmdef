@@ -1,0 +1,14 @@
+{
+    "name": "GMPR2512.Lesson05",
+    "rootNamespace": "GMPR2512.Lesson05",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
