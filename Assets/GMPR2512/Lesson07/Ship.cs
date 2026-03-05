@@ -5,20 +5,49 @@ namespace GMPR2512.Lesson07 {
 	public class Ship : MonoBehaviour {
 		[SerializeField] private float movementSpeed = 5, rotationSpeed = 200, scaleSpeed = 5;
 		[SerializeField] private float minRotation = 25, maxRotation = -25;
+		[Space]
+		[SerializeField] private GameObject projectilePrefab;
 
-		private InputAction moveAction, rotationAction, scaleAction;
+		private InputAction moveAction, rotationAction, scaleAction, fireAction;
+
+		private Transform firePos;
+
 
 		void Awake() {
 			moveAction = InputSystem.actions.FindAction("Player/Move");
 			rotationAction = InputSystem.actions.FindAction("Player/Move");
 			scaleAction = InputSystem.actions.FindAction("Player/Scale");
+			fireAction = InputSystem.actions.FindAction("Player/Jump");
+
+			firePos = transform.GetChild(0);
+		}
+
+		void OnEnable() {
+			moveAction?.Enable();
+			rotationAction?.Enable();
+			rotationAction?.Enable();
+			fireAction?.Enable();
+
+			if (fireAction != null) {
+				fireAction.Enable();
+
+				fireAction.performed += FireButtonPressed;
+				fireAction.canceled += FireButtonReleased;
+			}
+		}
+
+		void OnDisable() {
+			moveAction?.Disable();
+			rotationAction?.Disable();
+			rotationAction?.Disable();
+			fireAction?.Disable();
 		}
 
 		void Update() {
 			#region Movement
 			Vector2 moveDirection = moveAction.ReadValue<Vector2>() * Vector2.right;
 			Vector2 translation = movementSpeed * Time.deltaTime * moveDirection.normalized;
-			transform.Translate(translation, Space.Self);
+			transform.Translate(translation, Space.World);
 			#endregion
 
 			#region Rotation
@@ -44,6 +73,20 @@ namespace GMPR2512.Lesson07 {
 			if (localScale.z < 0) localScale.z = 0;
 			transform.localScale = localScale;
 			#endregion
+		}
+
+
+		private void FireButtonPressed(InputAction.CallbackContext context) {
+			GameObject newProjectile = 
+				Instantiate(projectilePrefab, firePos.position, transform.rotation);
+			
+			Projectile projectileScript = newProjectile.GetComponent<Projectile>();
+			projectileScript.Speed = 5;
+			projectileScript.Direction = transform.up;
+		}
+
+		private void FireButtonReleased(InputAction.CallbackContext context) {
+			// [TODO]
 		}
 	}
 }
