@@ -19,12 +19,13 @@ namespace GMPR2512.Lesson07 {
 			transform.Rotate(0, 0, spinVelocity * Time.deltaTime, Space.World);
 		}
 
-		void OnTriggerEnter2D(Collider2D collision) {
-			if (collision.gameObject.CompareTag(TagFilter))
-				Instantiate(explosionEffect, collision.gameObject.transform.position, transform.rotation);
+		void OnTriggerEnter2D(Collider2D collider) {
+			if (!collider.gameObject.CompareTag(TagFilter)) return;
 
-				Destroy(collision.gameObject);
-				Destroy(this.gameObject);
+			Instantiate(explosionEffect, collider.gameObject.transform.position, transform.rotation);
+
+			Destroy(collider.gameObject);
+			Destroy(gameObject);
 		}
 	}
 }
