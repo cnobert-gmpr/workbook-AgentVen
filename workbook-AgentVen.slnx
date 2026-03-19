@@ -68,6 +68,7 @@
   <Project Path="Unity.2D.Aseprite.Common.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
   <Project Path="GMPR2512.Lesson04.csproj" />
+  <Project Path="GMPR2512.Lesson08.csproj" />
   <Project Path="GMPR2512.Lesson05.csproj" />
   <Project Path="Unity.InputSystem.DocCodeSamples.csproj" />
   <Project Path="Unity.RenderPipelines.Universal.Shaders.csproj" />
