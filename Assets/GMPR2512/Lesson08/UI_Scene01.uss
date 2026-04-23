@@ -1,0 +1,18 @@
+.container {
+}
+
+.primary-button {
+	width: 200px;
+	height: 60px;
+	background-color: #383838;
+	color: white;
+	font-size: 20px;
+	border-radius: 10px;
+	border-width: 2px;
+}
+
+.primary-button:hover {
+}
+
+.primary-button:active {
+}

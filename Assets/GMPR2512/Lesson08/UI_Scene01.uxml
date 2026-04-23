@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd">
+	<ui:Style src="UI_Scene01.uss"/>
+
+	<ui:VisualElement class="container">
+		<ui:Button text="Button" name="ChangeToScene00Button" class="primary-button"/>
+	</ui:VisualElement>
+</ui:UXML>
