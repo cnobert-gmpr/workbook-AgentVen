@@ -31,7 +31,7 @@ namespace GMPR2512.Lesson09 {
 			transform.parent.Rotate(new Vector3(0, 0, rotationInput * Time.deltaTime));
 			#endregion
 
-			int layerMask = LayerMask.GetMask("Ground", "Enemy");
+			int layerMask = LayerMask.GetMask("Ground", "Player");
 			RaycastHit2D raycastHit =
 				Physics2D.Raycast(transform.position, transform.right, laserLength, layerMask);
 			
@@ -39,6 +39,10 @@ namespace GMPR2512.Lesson09 {
 			if (raycastHit.collider != null) endPoint = raycastHit.point;
 			laserLineRenderer?.SetPosition(0, transform.position);
 			laserLineRenderer?.SetPosition(1, endPoint);
+
+			if (raycastHit.transform != null && raycastHit.transform.gameObject.layer.Equals(LayerMask.NameToLayer("Player"))) {
+				Destroy(raycastHit.transform.gameObject);
+			}
 		}
 	}
 }

@@ -25,6 +25,7 @@
   <Project Path="Unity.InputSystem.csproj" />
   <Project Path="GMPR2512.Lesson07.csproj" />
   <Project Path="PPv2URPConverters.csproj" />
+  <Project Path="GMPR2512.Lesson09.csproj" />
   <Project Path="Unity.2D.Animation.Editor.csproj" />
   <Project Path="Unity.Searcher.Editor.csproj" />
   <Project Path="Unity.2D.SpriteShape.Runtime.csproj" />
@@ -67,7 +68,6 @@
   <Project Path="Unity.VisualScripting.Shared.Editor.csproj" />
   <Project Path="Unity.2D.Aseprite.Common.csproj" />
   <Project Path="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
-  <Project Path="GMPR2512.Lesson09.csproj" />
   <Project Path="GMPR2512.Lesson04.csproj" />
   <Project Path="GMPR2512.Lesson08.csproj" />
   <Project Path="GMPR2512.Lesson05.csproj" />
